@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SFDR</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 class="main-title"><a href="home.html">San Francisco Safe Response</a></h1>
+        <h2 class="urgent-title">URGENT:</h2>
+        <button class="send-help">SEND HELP</button>
+        <button class="sound-alert">Sound Alert</button>
+        <div id="dvMap"></div>
+        <button class="provide-zone"><a href="#">Provide a safe zone</a></button>
+        <div class="safe-zone-list" id="safe-zone-list">
+            <ul id="safe-spaces"></ul>
+
+        </div>
+        <h1>Let us know that you are okay:</h1>
+        <form>
+            <input type="text" name="name" id="nameField" placeholder="Name"><br>
+            <input type="text" name="location" id="locField" placeholder="Location"><br>
+            <input type="text" name="birthday" id="bdayField" placeholder="Birthday"><br>
+            <input type="text" name="hometown" id="hometownField" placeholder="Hometown"><br>
+            <button id="submitBtn" type="submit">Submit</button>
+        </form>
+        <a href="checkedin.html">Check Safe People</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
+    <script type="text/javascript">
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (p) {
+                var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+                var mapOptions = {
+                    center: LatLng,
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+                var marker = new google.maps.Marker({
+                    position: LatLng,
+                    map: map,
+                    title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
+                });
+                google.maps.event.addListener(marker, "click", function (e) {
+                    var infoWindow = new google.maps.InfoWindow();
+                    infoWindow.setContent(marker.title);
+                    infoWindow.open(map, marker);
+                });
+            });
+        } else {
+            alert('Geo Location feature is not supported in this browser.');
+        }
+    </script>
+    <script src="home.js"></script>
+</body>
+
+</html>

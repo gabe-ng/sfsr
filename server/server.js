@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 let cors = require("cors");
 
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors());
@@ -14,6 +16,7 @@ app.post("/api/usercreate", controllers.safeUser.createSafeUser);
 
 // Safe Spaces
 app.get("/api/safespaces", controllers.safeSpace.getSafeSpace); 
+app.post("/api/spacecreate", controllers.safeSpace.createSafeSpace); 
 
 
 // Server

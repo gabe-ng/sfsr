@@ -5,7 +5,10 @@ let SafeSpaceSchema = new Schema({
   name: String,
   address: String,
   housingCapacity: Number,
-  openSpaces: Boolean,
+  occupants: {
+    type: Number,
+    default: 0
+  },
   registerDate: {
     type: Date,
     default: Date.now
