@@ -10,10 +10,10 @@ let controllers = require("./controllers");
 
 // Safe Users
 app.get("/api/safeusers", controllers.safeUser.getSafeUsers);
-
 app.post("/api/usercreate", controllers.safeUser.createSafeUser);
 
-app.get("/api/safespace", controllers.safeSpace.getSafeSpace); 
+// Safe Spaces
+app.get("/api/safespaces", controllers.safeSpace.getSafeSpace); 
 
 
 // Server
