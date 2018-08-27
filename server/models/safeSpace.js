@@ -9,6 +9,7 @@ let SafeSpaceSchema = new Schema({
     type: Number,
     default: 0
   },
+  canShare: String,
   registerDate: {
     type: Date,
     default: Date.now

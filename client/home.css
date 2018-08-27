@@ -40,5 +40,24 @@ button {
 
 #dvMap {
     width: 1000px;
-    height: 200px;
+    height: 500px;
+}
+
+footer {
+    height: 150px;
+    width: 100%;
+    margin-top: 50px;
+    background: teal;
+    display: flex;
+}
+
+footer ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    list-style: none;
+}
+
+footer li {
+    margin: 1em;
 }
