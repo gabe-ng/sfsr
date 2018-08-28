@@ -13,17 +13,16 @@
 
 <body>
     <div class="main-container">
-        <h1 class="main-title"><a href="home.html">San Francisco Safe Response</a></h1>
-        <h2 class="urgent-title">URGENT:</h2>
-        <button class="send-help">SEND HELP</button>
-        <button class="sound-alert">Sound Alert</button>
+        <h1 class="main-title"><a href="home.html"><img src="Logo.png"></a></h1>
+        <button class="send-help">I NEED HELP</button>
+        <button class="sound-alert">SOUND ALERT</button>
         <div id="dvMap"></div>
-        <button class="provide-zone"><a href="#">Provide a safe zone</a></button>
         <div class="safe-zone-list" id="safe-zone-list">
-            <ul id="safe-spaces"></ul>
-
+            <h4 class="current-safe">Current Safe Zones</h4>
+            <ul id="safe-spaces" class="safe-spaces"></ul>
         </div>
-        <h1>Let us know that you are okay:</h1>
+        <button class="provide-zone"><a href="wanttohelp.html">Provide a safe zone</a></button>
+        <h3 class="let-us-know-title">Let us know that you are okay:</h3>
         <form>
             <input type="text" name="name" id="nameField" placeholder="Name"><br>
             <input type="text" name="location" id="locField" placeholder="Location"><br>
@@ -31,7 +30,8 @@
             <input type="text" name="hometown" id="hometownField" placeholder="Hometown"><br>
             <button id="submitBtn" type="submit">Submit</button>
         </form>
-        <a href="checkedin.html">Check Safe People</a>
+        <h4 class="check-safe">Check the Safe List:</h4>
+        <button class="search-safe"><a href="checkedin.html">Search</a></button>
         <footer>
             <ul>
                 <li><a href="resources.html">More Resources</a></li>

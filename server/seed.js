@@ -11,14 +11,12 @@ let userList = [
 
 let spaceList = [
     {
-        name: "Jane Doe",
         address: "124 abc st, 94158, SF, CA",
         housingCapacity: 10,
         occupants: 5,
         canShare: "Food, water, shelter"
     },
     {
-        name: "Jdqjdjq Doe",
         address: "12dqdqwndqwdq st, 94158, SF, CA",
         housingCapacity: 10,
         occupants: 10,

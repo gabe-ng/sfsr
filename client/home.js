@@ -14,13 +14,13 @@ const renderSafeSpaces = response => {
   response.forEach(space => {
       let open;
       if (space.housingCapacity <= space.occupants) {
-          open = `<span><button class="reserve-button">Reserve Spot</button></span>`;
+          open = `<span><button class="reserve-button">Reserve</button></span>`;
       } else {
           open = `<span class="full-message">Spot Full</span>`
       }
     $("#safe-spaces").append(`
             <li class="safe-space">
-                <p>Address: ${space.address}</p> ${open}
+                <p>Address: ${space.address} ${open}</p>
         </li>`);
   });
 };

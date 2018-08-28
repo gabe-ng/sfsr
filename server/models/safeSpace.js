@@ -2,14 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let SafeSpaceSchema = new Schema({
-  name: String,
   address: String,
   housingCapacity: Number,
   occupants: {
     type: Number,
     default: 0
   },
-  canShare: String,
+  canShare: {
+    type: String,
+    default: "Everything"
+  },
   registerDate: {
     type: Date,
     default: Date.now
